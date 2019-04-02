@@ -1,0 +1,41 @@
+<div class="container mt-2 mb-2">
+    <div class="row mx-auto">
+        <div class="col-md-6 mx-auto">
+            <form action="../usuario/AgregarH" method="POST">
+                <div class="form-group mx-auto text-center">
+                    <i class="far fa-file-image fa-7x" id="icono"></i>
+                </div>
+                <div class="form-group">
+                    <h4>Escoge una imagen:</h4>
+                    <select name="opcion" id="opcion" class="form-control" onchange="icono();">
+                        <option value="far fa-file-image fa-7x">Por defecto</option>
+                        <option value="fas fa-briefcase fa-7x">Portafolio</option>
+                        <option value="fas fa-globe fa-7x">Mundo</option>
+                        <option value="fas fa-laptop-code fa-7x">Computadora</option>
+                        <option value="fas fa-database fa-7x">Base de datos</option>
+                        <option value="fas fa-hammer fa-7x">Martillo</option>
+                        <option value="fas fa-hard-hat fa-7x">Casco</option>
+                        <option value="fas fa-file-signature fa-7x">Archivo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="titulo" class="form-control" placeholder="Titulo">
+                </div>
+                <div class="form-group">
+                    <textarea name="descripcion" id="" cols="30" rows="10" class="form-control" placeholder="Descripcion"></textarea>
+                </div>
+                <button class="btn btn-primary btn-block">Agregar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function icono(){
+        var opcion=document.getElementById('opcion').value;
+        var icono= document.getElementById('icono');
+        //icono
+        //console.log(opcion);
+        icono.className=opcion;
+    }
+</script>

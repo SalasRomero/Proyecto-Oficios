@@ -1,0 +1,111 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="card p-2">
+                            <div class="card-img-top">
+                                <img src="../img/Facebook-Perfil.jpg" alt="" style="width: 20rem">
+                                <div class="d-block">
+                                    <a  href="../usuario/EditarPerfil" class="btn btn-secondary btn-block">
+                                        Editar Perfil
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" value="{{user.Nombres}} {{user.ApellidoPa}} {{user.ApellidoMa}}" disabled placeholder="Nombre">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" value="{{user.Correo}}" disabled placeholder="Correo">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" value="{{user.Especialidad}}"  disabled placeholder="trabajo">
+                                </div>
+                                <div class="form-group">
+                                    <textarea  class="form-control" name="" id="" cols="30" rows="10" disabled>{{user.Descripcion}}</textarea>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="col-md-8">
+            {{#if user.Tipo}}
+                <p>Funciona</p>
+                {{else}}
+                <p>Es de tipo null</p>
+            {{/if}}
+
+
+            <div class="container">
+                 <h2 class="col-md-12">Habilidades:</h2>
+                
+                <a href="../usuario/AgregarH" class="btn btn-secondary">Agregar</a>
+            <div class="row ">
+                {{#each habi}}
+                <div class="card col-md-4 p-4 mt-1 ">
+                <div class="card-img-top text-center">
+                <i class="{{Img}}"></i>
+                </div>
+                <div class="card-title text-uppercase mx-auto"> 
+                  <a href="../usuario/verhabilidad/{{Id_habi}}">{{Titulo}}</a> 
+                </div>
+                <div class="card-body fond-small text-justify">l
+                    {{Descripcion}}
+                </div>
+                <div class="d-inline-flex mx-auto">
+                    <a href="../usuario/EliminarHabi/{{Id_habi}}" class="btn btn-danger">Eliminar</a>
+                    <a href="../usuario/EditarHabi/{{Id_habi}}" class="btn btn-secondary">Editar</a>
+                </div>
+                </div>
+                {{else}}
+                    <!--<div class="card">
+                        <p>No cuentas con ninguna habilidad</p>
+                        <a href="">Agregar habilidad</a>
+                    </div>-->
+                {{/each}}
+            
+            </div>
+            </div>
+            <div class="container ">
+               <div class="row">
+                    <h2 class="col-md-12">Proyectos</h2>
+            <a href="../usuario/AgregarP" class="btn btn-secondary">Agregar</a>
+            <div class="row ">
+                {{#each proye}}
+                    <div class="card col-md-4 p-4 mt-1 ">
+                <div class="card-img-top text-center">
+                <i class="{{Img_Proyecto}}"></i>
+                </div>
+                <div class="card-title text-uppercase mx-auto"> 
+                    <a href="../usuario/verproyecto/{{Id_Proyecto}}">{{Nombre_Proyecto}}</a>
+                </div>
+                <div class="card-body fond-small text-justify">l
+                    {{Descripcion}}
+                </div>
+                <div class="d-inline-flex mx-auto">
+                    <a href="../usuario/EliminarPro/{{Id_Proyecto}}" class="btn btn-danger">Eliminar</a>
+                    <a href="../usuario/EditarPro/{{Id_Proyecto}}" class="btn btn-secondary">Editar</a>
+                </div>
+                    </div>
+                {{else}}
+                 <!--<div class="col-md-4 mx-auto">
+                     <div class="card">
+                    <div class="card-body">
+                        <p>No cuentas con ningun proyecto</p>
+                        <a href="../usuario/AgregarP">Agregar Proyecto</a>
+                    </div>
+                </div>
+                </div>-->
+                {{/each}}
+
+               </div>
+               
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>

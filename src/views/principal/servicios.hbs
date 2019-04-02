@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="container mt-3">
+    <div class="row mx-auto">
+      <div class="col-md-12 mx-auto">
+        <form action="" class="form-inline">
+          <select name="busqueda" id="" class="form-control w-50">
+            <option value="">Opción 1</option>
+            <option value="">Opción 2</option>
+          </select>
+          <button class="btn btn-primary ml-2">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+    <div class="row mt-3 mb-3">
+          {{#each lista}}
+        <div class="col-md-3 animated  bounceInLeft m-3 ">
+            <div class="text-uppercase text-white bg-dark text-center rounded" style="font-family: 'Oswald', sans-serif;">
+                {{Nombres}} {{ApellidoPa}} {{ApellidoMa}}
+            </div>
+        <div class="card  text-justify h-100 ">
+            <div class="card-body">
+                <div class="card-img-top text-center">
+                    <img src="{{Foto_Perfil}}" alt="" style="width: 10rem;">
+                </div>
+                <p class="h5" style="font-family: 'Oswald', sans-serif;">{{Especialidad}}</p>
+                <p style="font-family: 'Comfortaa', cursive;">{{'SUBSTRING(Descripcion,1,100)'}}<spam>...</spam> </p>
+            </div>
+            <a href="verperfil/{{Id_User}}" class="btn btn-primary btn-block">Ver perfil</a>
+        </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

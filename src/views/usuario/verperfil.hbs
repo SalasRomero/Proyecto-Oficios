@@ -1,0 +1,97 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3">
+                <div class="container">
+                    <div class="row">
+                       
+                        <div class="card p-2 animated bounceInDown">
+                            <div class="card-img-top">
+                                
+                                <img src="{{usu.Foto_Perfil}}" alt="" style="width: 15rem">
+                                <div class="d-block">
+                                    
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Nombre" value="{{usu.Nombres}} {{usu.ApellidoPa}} {{usu.ApellidoMa}}" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Correo" value="{{usu.Correo}}" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="trabajo" value="{{usu.Especialidad}}" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="" id="" cols="30" rows="10" disabled>{{usu.Descripcion}}</textarea>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="col-md-9">
+            <div class="container animated bounceInDown">
+                 <h2 class="col-md-12">Habilidades:</h2>
+            <div class="row ">
+                {{#each habilidades}}
+            <div class="card col-md-3 p-4 m-2 ">
+                <div class="card-img-top text-center">
+                <i class="{{Img}}"></i>
+                </div>
+                <div class="card-title text-uppercase mx-auto"> 
+                   {{Titulo}}
+                </div>
+                <div class="card-textfond-small text-justify">l
+                    {{descripcion}}
+                </div>
+                <a href="../verhabilidad/{{Id_habi}}" class="btn btn-primary btn-block">Leer más...</a>
+            </div>
+            {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <p>Este usuario no contiene ninguna habilidad</p>
+                        <a href="../../usuario/perfil">Regresar a home</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+{{!-- termina el ciclo--}}
+            </div>
+            </div>
+            <div class="container animated bounceInDown ">
+                    <h2 class="col-md-12">Proyectos:</h2>
+               <div class="row">
+                    {{#each proyectos}}
+            <div class="card col-md-3 p-4 m-2 ">
+                <div class="card-img-top text-center">
+                    <i class="{{Img_Proyecto}}"></i>
+               
+                </div>
+                <div class="card-title text-uppercase mx-auto"> 
+                   {{Nombre_Proyecto}}
+                </div>
+                <div class="card-textfond-small text-justify">l
+                    {{Descripcion}}
+                </div>
+                <a href="../verproyecto/{{Id_Proyecto}}" class="btn btn-primary btn-block">Leer más...</a>
+            </div>
+
+            {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <p>Este usuario no contiene ningun Proyecto</p>
+                        <a href="../../usuario/perfil">Regresar a home</a>
+                    </div>
+                </div>
+            </div>
+
+            {{/each}}
+               </div>
+            </div>
+        </div>
+    </div>
+</div>

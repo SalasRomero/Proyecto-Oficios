@@ -1,0 +1,23 @@
+<div class="container">
+       <div class="row mt-3 mb-3">
+           {{#each lista}}
+        <div class="col-md-3 animated  bounceInLeft">
+            <div class="text-uppercase text-white bg-dark text-center rounded wobble" style="font-family: 'Oswald', sans-serif;">
+                {{Titulo_Vacante}}
+            </div>
+        <div class="card  text-justify ">
+            <div class="card-body">
+                <div class="card-img-top text-center">
+                    <img class=" animated" src="{{Img}}" alt="" style="width: 10rem;">
+                </div>
+                <p class="h5" style="font-family: 'Oswald', sans-serif;">{{Nombre_Emp}}</p>
+                <p style="font-family: 'Comfortaa', cursive;">{{descripcion}}<spam>...</spam> </p>
+                <h5 class="text-center">{{timeago Fecha_Creacion}}</h5>
+            </div>
+            <a href="/vervacante/{{Id_Vacante}}" class="btn btn-primary btn-block">Leer más...</a>
+        </div>
+        </div>
+        {{/each}}
+    </div>
+
+</div>
